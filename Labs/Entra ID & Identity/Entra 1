@@ -1,0 +1,25 @@
+Overview
+This document outlines the operational differences between two user accounts based on their Role-Based Access Control (RBAC) permissions in Microsoft Azure.
+User Profiles
+•	Anthony Rodrigue: Assigned the Helpdesk Administrator RBAC role.
+•	Sergio Falcon: No specific Azure roles assigned (Standard User).
+Objective
+The purpose of this document is to demonstrate and compare the administrative capabilities and interface differences between these two accounts by logging into each profile.
+
+ 
+ 
+
+Test Case: Password Reset Capabilities
+To demonstrate the practical application of these RBAC settings, both accounts attempted to reset the password for a standard, non-administrative user.
+Results
+•	Anthony Rodrigue (Helpdesk Administrator): Successfully initiated and completed the password reset for the target user account, as confirmed by the administrative interface. (Insert Image Here)
+•	Sergio Falcon (Standard User): The password reset attempt failed. The system denied the request and displayed the following error message:
+"The password cannot be reset. This may be due to an incorrect level of administrative privilege or if trying to reset your own password." 
+
+ 
+
+ 
+
+Conclusion
+This test clearly illustrates the enforcement of Microsoft Entra ID role assignments. Because Anthony holds the Helpdesk Administrator role, he possesses the mandatory administrative privileges required to manage user credentials, whereas Sergio's standard account is restricted from performing these actions.
+
