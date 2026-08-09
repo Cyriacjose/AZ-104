@@ -17,8 +17,8 @@ Results
 •	Sergio Falcon (Standard User): The password reset attempt failed. The system denied the request and displayed the following error message:
 "The password cannot be reset. This may be due to an incorrect level of administrative privilege or if trying to reset your own password." 
 
-![Results for Password reset](..\..\Images\3.png)
-![Results for Password reset](..\..\Images\4.png)
+![Results for Password reset](../../Images/3.png)
+![Results for Password reset](../../Images/4.png)
 
 Conclusion
 This test clearly illustrates the enforcement of Microsoft Entra ID role assignments. Because Anthony holds the Helpdesk Administrator role, he possesses the mandatory administrative privileges required to manage user credentials, whereas Sergio's standard account is restricted from performing these actions.
