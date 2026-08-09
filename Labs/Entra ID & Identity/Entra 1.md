@@ -1,25 +1,51 @@
-Overview
-This document outlines the operational differences between two user accounts based on their Role-Based Access Control (RBAC) permissions in Microsoft Azure.
-User Profiles
-•	Anthony Rodrigue: Assigned the Helpdesk Administrator RBAC role.
-•	Sergio Falcon: No specific Azure roles assigned (Standard User).
-Objective
-The purpose of this document is to demonstrate and compare the administrative capabilities and interface differences between these two accounts by logging into each profile.
+# Microsoft Entra ID: Role-Based Access Control (RBAC) Verification
 
-![Entra User 2](../../Images/1.png)
-![Entra User 2](../../Images/2.png)
- 
+## Overview
+This document details the operational and security differences between two user accounts based on their assigned **Role-Based Access Control (RBAC)** permissions within Microsoft Entra ID (formerly Azure AD).
 
-Test Case: Password Reset Capabilities
-To demonstrate the practical application of these RBAC settings, both accounts attempted to reset the password for a standard, non-administrative user.
-Results
-•	Anthony Rodrigue (Helpdesk Administrator): Successfully initiated and completed the password reset for the target user account, as confirmed by the administrative interface. (Insert Image Here)
-•	Sergio Falcon (Standard User): The password reset attempt failed. The system denied the request and displayed the following error message:
-"The password cannot be reset. This may be due to an incorrect level of administrative privilege or if trying to reset your own password." 
+---
 
-![Results for Password reset](../../Images/3.png)
-![Results for Password reset](../../Images/4.png)
+## User Profiles
 
-Conclusion
-This test clearly illustrates the enforcement of Microsoft Entra ID role assignments. Because Anthony holds the Helpdesk Administrator role, he possesses the mandatory administrative privileges required to manage user credentials, whereas Sergio's standard account is restricted from performing these actions.
+| User Name | Assigned Role | Access Scope & Capabilities |
+| :--- | :--- | :--- |
+| **Anthony Rodrigue** | **Helpdesk Administrator** | Authorized to perform administrative tasks, including resetting passwords for non-administrative accounts. |
+| **Sergio Falcon** | **Standard User** *(No Roles)* | Unprivileged account restricted to default self-service operations; no administrative privileges. |
 
+---
+
+## Objective
+To evaluate, contrast, and document the administrative capabilities and interface permissions between a privileged role holder and an unprivileged standard user within the Entra ID tenant.
+
+![Anthony Rodrigue Profile](../../Images/1.png)
+![Sergio Falcon Profile](../../Images/2.png)
+
+---
+
+## Test Case: Password Reset Capabilities
+
+### Scenario
+Both accounts attempted to initiate a password reset for a designated target user (a standard, non-administrative account) via the Microsoft Entra ID admin portal.
+
+### Expected vs. Actual Results
+
+* **Anthony Rodrigue (`Helpdesk Administrator`)**
+  * **Result:** **`SUCCESS`**
+  * **Behavior:** The administrative workflow successfully authorized the request, allowing Anthony to initiate and complete the credential reset for the target user.
+
+* **Sergio Falcon (`Standard User`)**
+  * **Result:** **`FAILED / ACCESS DENIED`**
+  * **Behavior:** The action was blocked by tenant-level security policy, preventing the execution of the password reset.
+  
+  > **System Error Message:**  
+  > *"The password cannot be reset. This may be due to an incorrect level of administrative privilege or if trying to reset your own password."*
+
+![Helpdesk Administrator Success Result](../../Images/3.png)
+![Standard User Access Denied Result](../../Images/4.png)
+
+---
+
+## Conclusion
+This test confirms the enforcement of **Least Privilege** and RBAC control mechanisms within Microsoft Entra ID:
+1. The **Helpdesk Administrator** role correctly delegates the necessary permissions (`microsoft.directory/users/password/update`) to manage user credentials.
+2. Accounts lacking explicit administrative roles are strictly blocked from executing administrative operations, preserving the security boundary.
