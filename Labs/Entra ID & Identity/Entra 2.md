@@ -38,7 +38,8 @@ Management groups allow for logical organization of subscriptions to simplify RB
    - **Management Group ID:** *(Must be unique across the tenant)*
    - **Management Group Name:** *(Display name for the organization unit)*
 5. Click **Submit** to create the group.
-
+   
+![Management Group](../../Images6.png)
 > **Note:** Every tenant automatically includes a **Tenant Root Management Group** at the top of the hierarchy, which contains all newly created management groups and subscriptions by default.
 
 ---
@@ -59,7 +60,7 @@ When built-in Azure roles do not meet granular security requirements, custom RBA
    - **Permissions:** Define exact control plane actions allowed (e.g., `Microsoft.Support/*`, `Microsoft.Resources/subscriptions/resourceGroups/read`).
    - **Assignable Scopes:** Specify the Management Group or Subscription level where this custom role can be assigned.
    - **JSON / Review + Create:** Verify the underlying JSON definition and deploy the custom role.
-
+![Custom RBAC]
 ---
 
 ### Task 4: Monitor Role Assignments with Activity Log
