@@ -53,12 +53,12 @@ Management groups allow for logical organization of subscriptions to simplify RB
 When built-in Azure roles do not meet granular security requirements, custom RBAC roles allow you to define precise permission sets.
 
 1. Navigate to **Management Groups** and select the target group/subscription scope.
-![Custom RBAC](../../Images/7.png)
 2. Select the **Access Control (IAM)** blade from the left menu.
 3. Click **+ Add** ➔ **Add custom role**.
-![Custom RBAC](../../Images/8.png)
+![Custom RBAC](../../Images/7.png)
 4. Step through the wizard tabs:
    - **Basics:** Provide a descriptive custom role name, description, and baseline permissions approach.
+   ![Custom RBAC](../../Images/8.png)
    - **Permissions:** Define exact control plane actions allowed (e.g., `Microsoft.Support/*`, `Microsoft.Resources/subscriptions/resourceGroups/read`).
    - **Assignable Scopes:** Specify the Management Group or Subscription level where this custom role can be assigned.
    - **JSON / Review + Create:** Verify the underlying JSON definition and deploy the custom role.
