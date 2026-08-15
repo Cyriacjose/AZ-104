@@ -39,7 +39,7 @@ Management groups allow for logical organization of subscriptions to simplify RB
    - **Management Group Name:** *(Display name for the organization unit)*
 5. Click **Submit** to create the group.
    
-![Management Group](../../Images6.png)
+![Management Group](../../Images/6.png)
 > **Note:** Every tenant automatically includes a **Tenant Root Management Group** at the top of the hierarchy, which contains all newly created management groups and subscriptions by default.
 
 ---
@@ -53,14 +53,17 @@ Management groups allow for logical organization of subscriptions to simplify RB
 When built-in Azure roles do not meet granular security requirements, custom RBAC roles allow you to define precise permission sets.
 
 1. Navigate to **Management Groups** and select the target group/subscription scope.
+![Custom RBAC](../../Images/7.png)
 2. Select the **Access Control (IAM)** blade from the left menu.
 3. Click **+ Add** ➔ **Add custom role**.
+![Custom RBAC](../../Images/8.png)
 4. Step through the wizard tabs:
    - **Basics:** Provide a descriptive custom role name, description, and baseline permissions approach.
    - **Permissions:** Define exact control plane actions allowed (e.g., `Microsoft.Support/*`, `Microsoft.Resources/subscriptions/resourceGroups/read`).
    - **Assignable Scopes:** Specify the Management Group or Subscription level where this custom role can be assigned.
    - **JSON / Review + Create:** Verify the underlying JSON definition and deploy the custom role.
-![Custom RBAC]
+![Custom RBAC](../../Images/9.png)
+![Custom RBAC](../../Images/10.png)
 ---
 
 ### Task 4: Monitor Role Assignments with Activity Log
