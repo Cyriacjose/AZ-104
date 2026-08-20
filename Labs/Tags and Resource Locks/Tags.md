@@ -41,7 +41,7 @@ Enforcing tagging prevents users from deploying any resource unless the required
 #### Verification & Testing
 Attempt to create a new Resource Group without specifying the required tag. The portal validation phase will fail and display a policy violation error message.
 
-![Policy Validation Error](../../Images/Enforced Tag.png)
+![Policy Validation Error](../../Images/EnforcedTag.png)
 
 ---
 
@@ -54,6 +54,8 @@ Rather than blocking deployment, Azure Policy can automatically apply tags or in
 4. On the **Remediation** tab, check the box for **Create a Remediation Task**.
 5. Select the managed identity type and click **Review + Create**.
 
+![Policy](../../Images/Policyinfo.png)
+
 #### Handling Existing Resources (Remediation)
 For pre-existing Resource Groups that lacked the tag prior to policy assignment:
 1. Navigate to **Policy** ➔ **Remediation**.
@@ -61,6 +63,7 @@ For pre-existing Resource Groups that lacked the tag prior to policy assignment:
 
 > **Note:** A similar built-in policy definition (**"Add or replace a tag on resources"**) can be assigned to automatically apply tags to underlying resources (such as Virtual Machines and Storage Accounts).
 
+![Creating a new resource](../../Images/Autotagapply.png)
 ---
 
 ### Task 3: Protecting Infrastructure with Resource Locks
