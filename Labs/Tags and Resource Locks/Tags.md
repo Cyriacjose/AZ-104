@@ -63,7 +63,8 @@ For pre-existing Resource Groups that lacked the tag prior to policy assignment:
 
 > **Note:** A similar built-in policy definition (**"Add or replace a tag on resources"**) can be assigned to automatically apply tags to underlying resources (such as Virtual Machines and Storage Accounts).
 
-![Creating a new resource](../../Images/Autotagapply.png)
+![resource](../../Images/Autotagapply.png)
+
 ---
 
 ### Task 3: Protecting Infrastructure with Resource Locks
@@ -88,16 +89,22 @@ Resource locks prevent accidental or malicious deletion and modification of crit
    - **Lock type:** Select **Delete** (or **Read-Only** depending on test case).
 5. Click **OK**.
 
+![Locks](../../Images/lock.png)
+
 #### Testing the Delete Lock:
 1. Attempt to delete the Resource Group `az104-rg2`.
 2. Enter `az104-rg2` in the confirmation box and click **Delete**.
 3. Confirm the secondary prompt.
 4. **Result:** The system returns a denial notification stating the resource group is locked and cannot be deleted until the lock is explicitly removed.
 
+![Delete](../../Images/DeleteafterResourcelock.png)
+
 #### Testing the Read-Only Lock:
 1. Apply a **Read-Only** lock to Resource Group `Lab-B`.
 2. Attempt to deploy a new resource or modify an existing resource inside `Lab-B`.
 3. **Result:** The action is blocked. Under a Read-Only lock, authorized users cannot create, update, or delete resources until the lock is removed.
+
+![Readonly](../../Images/Readonlyresourcelock.png)
 
 ---
 
