@@ -13,7 +13,7 @@ This document outlines the operational implementation of **Resource Tagging**, a
 
 Tags can be assigned manually during resource deployment or configured at any point after creation via the Azure Portal, CLI, or PowerShell.
 
-![Azure Tags Configuration](../../Images/tags.png)
+![Azure Tags Configuration](../../Images/Tags.png)
 
 ---
 
