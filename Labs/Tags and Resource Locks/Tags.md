@@ -41,7 +41,7 @@ Enforcing tagging prevents users from deploying any resource unless the required
 #### Verification & Testing
 Attempt to create a new Resource Group without specifying the required tag. The portal validation phase will fail and display a policy violation error message.
 
-![Policy Validation Error](../../Images/policy-error.png)
+![Policy Validation Error](../../Images/Enforced Tag.png)
 
 ---
 
